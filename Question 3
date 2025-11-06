@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Car{
+    private:
+    string brand;
+    float price;
+
+    public:
+    Car(string b,float p){
+        brand=b;
+        price=p;
+    }
+    void display(){
+        cout<<"brand:"<<brand<<endl;
+        cout<<"price:Rs."<<price<<endl;
+    };
+};
+int main(){
+    string s; 
+    float d;
+    cout<<"enter the brand and price of the car 1:"<<endl;
+    cin>>s>>d;
+    Car car1(s,d);
+    string z; 
+    float n;
+    cout<<"enter the brand and price of the car 2:"<<endl;
+    cin>>z>>n;
+    Car car2(z,n);
+    cout<<"Car 1 Details:"<<endl;
+    car1.display();
+    cout<<"Car 2 Details:"<<endl;
+    car2.display();
+    return 0;
+}
