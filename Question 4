@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    float length, breadth, height;  // fixed: added commas and corrected typo
+
+public:
+    // Default constructor
+    Box() {
+        length = breadth = height = 1;
+    }
+
+    // Constructor for cube (all sides equal)
+    Box(float l) {
+        length = breadth = height = l;
+    }
+
+    // Constructor for rectangular box
+    Box(float l, float b, float h) {
+        length = l;
+        breadth = b;
+        height = h;
+    }
+
+    // Function to display volume
+    void displayVolume() {
+        float Volume = length * breadth * height;  // fixed: corrected formula
+        cout << "Volume = " << Volume << endl;
+    }
+};
+
+int main() {
+    Box b1;  // calls default constructor
+    cout << "Box 1: ";
+    b1.displayVolume();
+
+    float l, b, h;
+
+    cout << "Enter the value of one side for Box 2: ";
+    cin >> l;
+    Box b2(l);  // fixed: pass l to constructor
+    cout << "Box 2: ";
+    b2.displayVolume();
+
+    cout << "Enter the values of length, breadth, and height for Box 3: ";
+    cin >> l >> b >> h;
+    Box b3(l, b, h);  // fixed: pass all dimensions to constructor
+    cout << "Box 3: ";
+    b3.displayVolume();
+
+    return 0;
+}
+
