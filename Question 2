@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class Complex{
+    private:
+    float real;
+    float imag;
+    public:
+    Complex(){
+        real=0;
+        imag=0;
+    }
+    Complex(float r){
+        real=r;
+        imag=0;
+    }
+    Complex(float r,float i){
+        real=r;
+        imag=i;
+    }
+    void display(){
+        cout<<real<<"+"<<imag<<"i"<<endl;
+    }
+};
+int main(){
+    cout<<"Demonstration of Constructor Overloading in Complex Class:";
+    Complex c1;
+    cout<<"Default Constructor:";
+    c1.display();
+    float realpart;
+    cout<<"enter the value of real part:";
+    cin>>realpart;
+     Complex c2(realpart);
+    cout<<"Constructor with only real part:";
+    c2.display();
+    float r,i;
+    cout<<"enter the values of real and imaginary part:";
+    cin>>r>>i;
+    Complex c3( r,i);
+    cout<<"Constructor with both real and imaginary parts:";
+    c3.display();
+    return 0;
+}
